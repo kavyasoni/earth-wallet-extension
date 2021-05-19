@@ -1,9 +1,9 @@
 {
-  "author": "polkadot.{js}",
-  "description": "Manage your Polkadot accounts outside of dapps. Injects the accounts and allows signing transactions for a specific account.",
+  "author": "Earth Wallet",
+  "description": "Manage your Polkadot wallet.",
   "homepage_url": "https://github.com/polkadot-js/extension",
-  "name": "polkadot{.js} extension",
-  "short_name": "polkadot{.js}",
+  "name": "Earth Wallet extension",
+  "short_name": "Earth Wallet",
   "manifest_version": 2,
   "permissions": ["storage", "tabs"],
   "background": {
@@ -11,14 +11,16 @@
     "persistent": true
   },
   "browser_action": {
-    "default_title": "polkadot{.js}",
+    "default_title": "Earth Wallet",
     "default_popup": "index.html"
   },
-  "content_scripts": [{
-    "js": ["content.js"],
-    "matches": ["http://*/*", "https://*/*"],
-    "run_at": "document_start"
-  }],
+  "content_scripts": [
+    {
+      "js": ["content.js"],
+      "matches": ["http://*/*", "https://*/*"],
+      "run_at": "document_start"
+    }
+  ],
   "icons": {
     "16": "images/icon-16.png",
     "32": "images/icon-32.png",
