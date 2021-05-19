@@ -33,7 +33,7 @@
   "Authorize": "",
   "Only approve this request if you trust the application. Approving gives the application access to the addresses of your accounts.": "",
   "Yes, allow this application access": "",
-  "Add the account with the generated seed": "",
+  "Add Account": "",
   "Create an account": "",
   "Please write down your wallet's mnemonic seed and keep it in a safe place. The mnemonic can be used to restore your wallet. Keep it carefully to not lose your assets.": "",
   "I have saved my mnemonic seed safely.": "",
@@ -142,7 +142,6 @@
   "Connect Ledger device": "",
   "External accounts and Access": "",
   "Allow QR Camera Access": "",
-  "Add Account": "",
   "Account type {{index}}": "",
   "Address index {{index}}": "",
   "Import Ledger Account": "",
@@ -158,5 +157,7 @@
   "Export all accounts": "",
   "All account": "",
   "password for encrypting all accounts": "",
-  "I want to export all my accounts": ""
+  "I want to export all my accounts": "",
+  "Welcome To Earth Wallet": "",
+  "Before we start, just a couple of notes regarding Earth Wallet:": ""
 }

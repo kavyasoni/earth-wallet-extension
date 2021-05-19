@@ -33,7 +33,7 @@
   "Authorize": "Yetki vermek",
   "Only approve this request if you trust the application. Approving gives the application access to the addresses of your accounts.": "Bu isteği yalnızca uygulamaya güveniyorsanız onaylayın. Onaylamak, uygulamaya hesaplarınızın adreslerine erişim izni verir.",
   "Yes, allow this application access": "Evet, bu uygulamanın erişimine izin ver",
-  "Add the account with the generated seed": "Oluşturulan anımsatıcı ile hesabı ekle",
+  "Add Account": "Oluşturulan anımsatıcı ile hesabı ekle",
   "Create an account": "Bir hesap oluşturun",
   "Please write down your wallet's mnemonic seed and keep it in a safe place. The mnemonic can be used to restore your wallet. Keep it carefully to not lose your assets.": "Lütfen cüzdanınızın anımsatıcılarını bir yere yazın ve güvenli bir yerde saklayın. Anımsatıcı, cüzdanınızı geri yüklemek için kullanılabilir. Varlıklarınızı kaybetmemek için dikkatlice saklayın",
   "I have saved my mnemonic seed safely.": "Anımsatıcıyı   güvenli bir şekilde kurtardım",

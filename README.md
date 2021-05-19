@@ -4,7 +4,7 @@
 [![beta](https://img.shields.io/npm/v/@polkadot/extension/beta?label=beta&logo=npm&style=flat-square)](https://www.npmjs.com/package/@polkadot/extension)
 [![maintainability](https://img.shields.io/codeclimate/maintainability-percentage/polkadot-js/extension?logo=code-climate&style=flat-square)](https://codeclimate.com/github/polkadot-js/extension)
 
-# ![polkadot{.js} extension](docs/logo.jpg)
+# ![Earth Wallet extension](docs/logo.jpg)
 
 A very simple scaffolding browser extension that injects a [@polkadot/api](https://github.com/polkadot-js/api) Signer into a page, along with any associated accounts, allowing for use by any dapp. This is an extensible POC implementation of a Polkadot/Substrate browser signer.
 
@@ -18,6 +18,7 @@ As it stands, it does one thing: it _only_ manages accounts and allows the signi
 ![interface screenshots](docs/extension-overview.png)
 
 ## Documentation and examples
+
 Find out more about how to use the extension as a Dapp developper, cookbook, as well as answers to most frequent questions in the [Polkadot-js extension documentation](https://polkadot.js.org/docs/extension/)
 
 ## Development version
@@ -26,16 +27,18 @@ Steps to build the extension and view your changes in a browser:
 
 1. Build via `yarn build` or `yarn watch`
 2. Install the extension
-  - Chrome:
-    - go to `chrome://extensions/`
-    - ensure you have the Development flag set
-    - "Load unpacked" and point to `packages/extension/build`
-    - if developing, after making changes - refresh the extension
-  - Firefox:
-    - go to `about:debugging#addons`
-    - check "Enable add-on debugging"
-    - click on "Load Temporary Add-on" and point to `packages/extension/build/manifest.json`
-    - if developing, after making changes - reload the extension
+
+- Chrome:
+  - go to `chrome://extensions/`
+  - ensure you have the Development flag set
+  - "Load unpacked" and point to `packages/extension/build`
+  - if developing, after making changes - refresh the extension
+- Firefox:
+  - go to `about:debugging#addons`
+  - check "Enable add-on debugging"
+  - click on "Load Temporary Add-on" and point to `packages/extension/build/manifest.json`
+  - if developing, after making changes - reload the extension
+
 3. When visiting `https://polkadot.js.org/apps/` it will inject the extension
 
 Once added, you can create an account (via a generated seed) or import via an existing seed. The [apps UI](https://github.com/polkadot-js/apps/), when loaded, will show these accounts as `<account name> (extension)`

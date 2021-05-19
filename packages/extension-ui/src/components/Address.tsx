@@ -243,7 +243,8 @@ function Address ({ actions, address, children, className, genesisHash, isExtern
             >
               {formatted || address || t('<unknown>')}
             </div>
-            <CopyToClipboard text={(formatted && formatted) || ''} >
+            <CopyToClipboard
+              text={(formatted && formatted) || ''} >
               <FontAwesomeIcon
                 className='copyIcon'
                 icon={faCopy}
@@ -318,6 +319,7 @@ export default styled(Address)(({ theme }: ThemeProps) => `
     display: flex;
     justify-content: space-between;
     position: relative;
+    max-width: 280px;
 
     .svg-inline--fa {
       width: 14px;
