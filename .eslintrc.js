@@ -12,17 +12,17 @@ module.exports = {
     '.yarn/**',
     '**/build/*',
     '**/coverage/*',
-    '**/node_modules/*'
+    '**/node_modules/*',
   ],
   parserOptions: {
     ...base.parserOptions,
-    project: [
-      './tsconfig.json'
-    ]
+    project: ['./tsconfig.json'],
   },
   rules: {
     ...base.rules,
     // this seems very broken atm, false positives
-    '@typescript-eslint/unbound-method': 'off'
-  }
+    '@typescript-eslint/unbound-method': 'off',
+    'space-before-function-paren': 'off',
+    'jsx-quotes': 'off',
+  },
 };

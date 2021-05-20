@@ -1,17 +1,17 @@
 // Copyright 2019-2021 @polkadot/extension-ui authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import React, { useCallback, useContext, useEffect, useState } from "react";
-import styled from "styled-components";
+import React, { useCallback, useContext, useEffect, useState } from 'react';
+import styled from 'styled-components';
 
-import { ActionContext, Address, Dropdown, Loading } from "../../components";
-import AccountNamePasswordCreation from "../../components/AccountNamePasswordCreation";
-import useGenesisHashOptions from "../../hooks/useGenesisHashOptions";
-import useTranslation from "../../hooks/useTranslation";
-import { createAccountSuri, createSeed } from "../../messaging";
-import { HeaderWithSteps } from "../../partials";
-import { DEFAULT_TYPE } from "../../util/defaultType";
-import Mnemonic from "./Mnemonic";
+import { ActionContext, Address, Dropdown, Loading } from '../../components';
+import AccountNamePasswordCreation from '../../components/AccountNamePasswordCreation';
+import useGenesisHashOptions from '../../hooks/useGenesisHashOptions';
+import useTranslation from '../../hooks/useTranslation';
+import { createAccountSuri, createSeed } from '../../messaging';
+import { HeaderWithSteps } from '../../partials';
+import { DEFAULT_TYPE } from '../../util/defaultType';
+import Mnemonic from './Mnemonic';
 
 interface Props {
   className?: string;
@@ -24,9 +24,9 @@ function CreateAccount({ className }: Props): React.ReactElement {
   const [step, setStep] = useState(1);
   const [account, setAccount] = useState<null | { address: string; seed: string }>(null);
   const type = DEFAULT_TYPE;
-  const [name, setName] = useState("");
+  const [name, setName] = useState('');
   const options = useGenesisHashOptions();
-  const [genesis, setGenesis] = useState("");
+  const [genesis, setGenesis] = useState('');
 
   useEffect((): void => {
     createSeed(undefined, type)
@@ -41,7 +41,7 @@ function CreateAccount({ className }: Props): React.ReactElement {
         setIsBusy(true);
 
         createAccountSuri(name, password, account.seed, undefined, genesis)
-          .then(() => onAction("/"))
+          .then(() => onAction('/'))
           .catch((error: Error): void => {
             setIsBusy(false);
             console.error(error);
@@ -51,37 +51,43 @@ function CreateAccount({ className }: Props): React.ReactElement {
     [account, genesis, onAction]
   );
 
-  const _onNextStep = useCallback(() => setStep(step => step + 1), []);
-  const _onPreviousStep = useCallback(() => setStep(step => step - 1), []);
+  const _onNextStep = useCallback(() => setStep((step) => step + 1), []);
+  const _onPreviousStep = useCallback(() => setStep((step) => step - 1), []);
 
   return (
     <>
-      <HeaderWithSteps step={step} text={t<string>("Create an account")} />
+      <HeaderWithSteps step={step}
+        text={t<string>('Create an account')} />
       <Loading>
         <div>
-          <Address address={account?.address} genesisHash={genesis} name={name} />
+          <Address address={account?.address}
+            genesisHash={genesis}
+            name={name} />
         </div>
         {account &&
-          (step === 1 ? (
-            <Mnemonic onNextStep={_onNextStep} seed={account.seed} />
-          ) : (
-            <>
-              <Dropdown
-                className={className}
-                label={t<string>("Network")}
-                onChange={setGenesis}
-                options={options}
-                value={genesis}
-              />
-              <AccountNamePasswordCreation
-                buttonLabel={t<string>("Add Account")}
-                isBusy={isBusy}
-                onBackClick={_onPreviousStep}
-                onCreate={_onCreate}
-                onNameChange={setName}
-              />
-            </>
-          ))}
+          (step === 1
+            ? (
+              <Mnemonic onNextStep={_onNextStep}
+                seed={account.seed} />
+            )
+            : (
+              <>
+                <Dropdown
+                  className={className}
+                  label={t<string>('Network')}
+                  onChange={setGenesis}
+                  options={options}
+                  value={genesis}
+                />
+                <AccountNamePasswordCreation
+                  buttonLabel={t<string>('Add Account')}
+                  isBusy={isBusy}
+                  onBackClick={_onPreviousStep}
+                  onCreate={_onCreate}
+                  onNameChange={setName}
+                />
+              </>
+            ))}
       </Loading>
     </>
   );

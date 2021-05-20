@@ -112,15 +112,22 @@ export default function Popup (): React.ReactElement {
     return <ErrorBoundary trigger={trigger}>{component}</ErrorBoundary>;
   }
 
-  const Root = isWelcomeDone
-    ? authRequests && authRequests.length
-      ? wrapWithErrorBoundary(<Authorize />, 'authorize')
-      : metaRequests && metaRequests.length
-        ? wrapWithErrorBoundary(<Metadata />, 'metadata')
-        : signRequests && signRequests.length
-          ? wrapWithErrorBoundary(<Signing/>, 'signing')
-          : wrapWithErrorBoundary(<Accounts/>, 'accounts')
-    : wrapWithErrorBoundary(<Welcome />, 'welcome');
+  const Root = () => {
+    console.log('isWelcomeDone', isWelcomeDone);
+    console.log('authRequests', authRequests);
+    console.log('metaRequests', metaRequests);
+    console.log('signRequests', signRequests);
+
+    return (isWelcomeDone
+      ? authRequests && authRequests.length
+        ? wrapWithErrorBoundary(<Authorize />, 'authorize')
+        : metaRequests && metaRequests.length
+          ? wrapWithErrorBoundary(<Metadata />, 'metadata')
+          : signRequests && signRequests.length
+            ? wrapWithErrorBoundary(<Signing />, 'signing')
+            : wrapWithErrorBoundary(<Accounts />, 'accounts')
+      : wrapWithErrorBoundary(<Welcome />, 'welcome'));
+  };
 
   return (
     <Loading>{accounts && authRequests && metaRequests && signRequests && (
@@ -149,7 +156,7 @@ export default function Popup (): React.ReactElement {
                           exact
                           path='/'
                         >
-                          {Root}
+                          {Root()}
                         </Route>
                       </Switch>
                     </ToastProvider>

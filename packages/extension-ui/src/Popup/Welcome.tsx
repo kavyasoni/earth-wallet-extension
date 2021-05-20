@@ -9,6 +9,7 @@ import styled from 'styled-components';
 import logo from '../assets/ew.svg';
 import { ActionContext, Box, Button, ButtonArea, List, VerticalSpace } from '../components';
 import useTranslation from '../hooks/useTranslation';
+import { Header } from '../partials';
 
 interface Props extends ThemeProps {
   className?: string;
@@ -25,18 +26,14 @@ const Welcome = function ({ className }: Props): React.ReactElement<Props> {
 
   return (
     <>
+      <Header text={t<string>('Welcome To Earth Wallet')} />
       <div className={className}>
         <img
           className='logo'
           src={logo}
         />
         <p>{t<string>('Before we start, just a couple of notes regarding Earth Wallet:')}</p>
-        <Box>
-          <List>
-            <li>{t<string>('We do not send any clicks, pageviews or events to a central server')}</li>
-            <li>{t<string>('We do not use any trackers or analytics')}</li>
-          </List>
-        </Box>
+
         <p>{t<string>('... we are not in the information collection business (even anonymized).')}</p>
       </div>
       <VerticalSpace />

@@ -3,7 +3,7 @@
 
 import type { AccountWithChildren } from '@polkadot/extension-base/background/types';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import Account from './Account';
 
@@ -11,7 +11,13 @@ interface Props extends AccountWithChildren {
   parentName?: string;
 }
 
-export default function AccountsTree ({ parentName, suri, ...account }: Props): React.ReactElement<Props> {
+export default function AccountsTree({ parentName, suri, ...account }: Props): React.ReactElement<Props> {
+  useEffect(() => {
+    console.log('account', account);
+    console.log('suri', suri);
+    console.log('parentName', parentName);
+  }, [account, parentName, suri]);
+
   return (
     <>
       <Account

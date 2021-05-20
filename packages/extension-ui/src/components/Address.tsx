@@ -319,7 +319,7 @@ export default styled(Address)(({ theme }: ThemeProps) => `
     display: flex;
     justify-content: space-between;
     position: relative;
-    max-width: 280px;
+    max-width: 248px;
 
     .svg-inline--fa {
       width: 14px;

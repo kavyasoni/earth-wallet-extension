@@ -3,7 +3,7 @@
 
 import type { ThemeProps } from '../types';
 
-import { faArrowLeft, faCog, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faCog, faEllipsisV, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useCallback, useRef, useState } from 'react';
 import styled from 'styled-components';
@@ -18,13 +18,14 @@ interface Props extends ThemeProps {
   children?: React.ReactNode;
   className?: string;
   showAdd?: boolean;
+  showMenu?: boolean;
   showBackArrow?: boolean;
   showSettings?: boolean;
   smallMargin?: boolean;
   text?: React.ReactNode;
 }
 
-function Header ({ children, className = '', showAdd, showBackArrow, showSettings, smallMargin = false, text }: Props): React.ReactElement<Props> {
+function Header ({ children, className = '', showAdd, showBackArrow, showMenu, showSettings, smallMargin = false, text }: Props): React.ReactElement<Props> {
   const [isAddOpen, setShowAdd] = useState(false);
   const [isSettingsOpen, setShowSettings] = useState(false);
   const addRef = useRef(null);
@@ -71,7 +72,8 @@ function Header ({ children, className = '', showAdd, showBackArrow, showSetting
               />
             )
           }
-          <span className='logoText'>{text || 'Earth Wallet'}</span>
+
+          {text && <span className='logoText'>{text || 'Earth Wallet'}</span>}
         </div>
         <div className='popupMenus'>
           {showAdd && (
@@ -95,6 +97,19 @@ function Header ({ children, className = '', showAdd, showBackArrow, showSetting
               <FontAwesomeIcon
                 className={`cogIcon ${isSettingsOpen ? 'selected' : ''}`}
                 icon={faCog}
+                size='lg'
+              />
+            </div>
+          )}
+          {showMenu && (
+            <div
+              className='popupToggle'
+              data-toggle-settings
+              onClick={_toggleSettings}
+            >
+              <FontAwesomeIcon
+                className={`cogIcon ${isSettingsOpen ? 'selected' : ''}`}
+                icon={faEllipsisV}
                 size='lg'
               />
             </div>
