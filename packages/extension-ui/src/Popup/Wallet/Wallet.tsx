@@ -127,8 +127,8 @@ export default styled(Wallet)(({ theme }: Props) => `
     .tokenActionView {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     }
 
     .tokenActionButton {
