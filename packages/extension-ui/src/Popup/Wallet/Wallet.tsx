@@ -12,7 +12,6 @@ import { Header } from '@polkadot/extension-ui/partials';
 
 import logo from '../../assets/polkadot-new-dot-logo.svg';
 
-
 interface Props extends ThemeProps {
   className?: string;
 }
@@ -33,28 +32,39 @@ const Wallet = function ({ className }: Props): React.ReactElement<Props> {
         <div className='secondaryBalanceLabel'>12.32 DOT</div>
         <div className='walletActionsView'>
           <div
-            className='tokenActionButton buyTokenButton'
+            className='tokenActionView buyTokenAction'
           >
             <FontAwesomeIcon
+              className='tokenActionButton'
+              color='#fff'
               icon={faArrowDown}
               size='lg'
             />
+            <div className='tokenActionLabel'>Buy</div>
           </div>
+
           <div
-            className='tokenActionButton sendTokenButton'
+            className='tokenActionView sendTokenAction'
           >
             <FontAwesomeIcon
+              className='tokenActionButton'
+              color='#fff'
               icon={faArrowUp}
               size='lg'
             />
+            <div className='tokenActionLabel'>Send</div>
           </div>
+
           <div
-            className='tokenActionButton swapTokenButton'
+            className='tokenActionView swapTokenAction'
           >
             <FontAwesomeIcon
+              className='tokenActionButton'
+              color='#fff'
               icon={faRetweet}
               size='lg'
             />
+            <div className='tokenActionLabel'>Swap</div>
           </div>
         </div>
 
@@ -114,26 +124,37 @@ export default styled(Wallet)(({ theme }: Props) => `
     padding: 18px;
     }
 
-    .tokenActionButton {
-    height: 36px;
-    width: 36px;
-    background-color: ${theme.buttonBackground};
-    padding: 4px;
-    border-radius: 50%;
+    .tokenActionView {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     }
 
-    .buyTokenButton {
+    .tokenActionButton {
+    height: 26px;
+    width: 26px;
+    background-color: ${theme.buttonBackground};
+    padding: 10px;
+    border-radius: 50%;
     }
 
-    .sendTokenButton {
+    .tokenActionLabel {
+    color: ${theme.buttonBackground};
+    font-family: ${theme.fontFamily};
+    font-size: 16px;
+    margin-top: 6px;
+    }
+
+    .buyTokenAction {
+    }
+
+    .sendTokenAction {
     margin-left: 36px;
     margin-right: 36px;
     }
 
-    .swapTokenButton {
+    .swapTokenAction {
         
     }
 
