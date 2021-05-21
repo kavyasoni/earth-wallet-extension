@@ -37,9 +37,8 @@ function AddAccount ({ className }: Props): React.ReactElement<Props> {
   return (
     <>
       <Header
-        showAdd
         showSettings
-        text={t<string>('Add Account')}
+        text={t<string>('Setup Account')}
       />
       <div className={className}>
         <div className='image'>
@@ -56,7 +55,7 @@ function AddAccount ({ className }: Props): React.ReactElement<Props> {
               icon={faKey}
               size='lg'
             />
-            <div className='otherActionLabel'>{t<string>('Import account from existing seed')}</div>
+            <div className='otherActionLabel'>{t<string>('Import account from seed')}</div>
           </div>
 
           <div className='verticalDivider' />
@@ -127,6 +126,7 @@ export default React.memo(styled(AddAccount)(({ theme }: Props) => `
     height: 100%;
     width:1px;
     background-color: ${theme.backButtonBackgroundHover};
+    margin: 0 24px;
   }
 
   .otherActionView {
