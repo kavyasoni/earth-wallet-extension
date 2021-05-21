@@ -104,7 +104,7 @@ export default React.memo(styled(AddAccount)(({ theme }: Props) => `
   }
 
   .otherActionLabel {
-    margin-top: 16px;
+    margin-top: 24px;
     text-align: center;
     font-size: 16px;
     color: ${theme.subTextColor};
