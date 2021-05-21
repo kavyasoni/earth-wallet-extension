@@ -26,7 +26,7 @@ const Wallet = function ({ className }: Props): React.ReactElement<Props> {
       <Header showMenu />
       <div className={className}>
         <img
-          className='logo'
+          className='tokenLogo'
           src={logo}
         />
         <div className='primaryBalanceLabel'>$56,8812.98 USD</div>
@@ -83,14 +83,14 @@ export default styled(Wallet)(({ theme }: Props) => `
     flex-direction: column;
     align-items: center;
     
-    .logo {
+    .tokenLogo {
     height: 28px;
     width: 28px;
     margin-bottom: 16px;
     border-radius: 50%;
-    border: 1px solid #ddd;
+    border: 1px solid ${theme.subTextColor};
     padding: 4px;
-    background-color: ${theme.textColor};
+    background-color: ${theme.tokenLogoBackground};
     }
 
     .primaryBalanceLabel {

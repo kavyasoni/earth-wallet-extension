@@ -43,7 +43,8 @@ const darkTheme = {
   readonlyInputBackground: '#1A1B20',
   subTextColor: '#DDD',
   textColor: '#FFFFFF',
-  textColorDanger: '#FF8686'
+  textColorDanger: '#FF8686',
+  tokenLogoBackground: '#FFFFFF'
 };
 
 export declare type Theme = typeof darkTheme;
