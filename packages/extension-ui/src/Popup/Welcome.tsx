@@ -7,9 +7,8 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 
 import logo from '../assets/ew.svg';
-import { ActionContext, Box, Button, ButtonArea, List, VerticalSpace } from '../components';
+import { ActionContext, Button } from '../components';
 import useTranslation from '../hooks/useTranslation';
-import { Header } from '../partials';
 
 interface Props extends ThemeProps {
   className?: string;
@@ -26,37 +25,47 @@ const Welcome = function ({ className }: Props): React.ReactElement<Props> {
 
   return (
     <>
-      <Header text={t<string>('Welcome To Earth Wallet')} />
       <div className={className}>
         <img
           className='logo'
           src={logo}
         />
-        <p>{t<string>('Before we start, just a couple of notes regarding Earth Wallet:')}</p>
-
-        <p>{t<string>('... we are not in the information collection business (even anonymized).')}</p>
+        <div className='welcomeText'>Welcome to Earth Wallet</div>
+        <div className='welcomeInfo'>Connecting you to Polkadot and the Decentralized Web.</div>
+        <Button className='getStartButton'
+          onClick={_onClick}>{t<string>("Let's get started")}</Button>
       </div>
-      <VerticalSpace />
-      <ButtonArea>
-        <Button onClick={_onClick}>{t<string>('Understood, let me continue')}</Button>
-      </ButtonArea>
     </>
   );
 };
 
 export default styled(Welcome)(({ theme }: Props) => `
   display: flex;
-  flex-direction: column;
+  height: 100%;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
-  p {
-    color: ${theme.subTextColor};
-    margin-bottom: 6px;
-    margin-top: 0;
+
+  .welcomeText {
+    color: ${theme.textColor};
+    font-family: ${theme.fontFamily};
+    font-size: 22px;
+    margin-top: 36px;
+    text-align: center;
   }
+
+  .welcomeInfo {
+    color: ${theme.subTextColor};
+    font-family: ${theme.fontFamily};
+    font-size: 14px;
+    margin-bottom: 16px;
+    margin-top: 10px;
+    text-align: center;
+  }
+
   .logo {
-        height: 148px;
-        width: 148px;
-        margin: 18px;
-        }
+    height: 148px;
+    width: 148px;
+    }
+
 `);
